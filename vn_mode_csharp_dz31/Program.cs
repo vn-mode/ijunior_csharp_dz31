@@ -50,12 +50,15 @@ namespace vn_mode_csharp_dz31
                 case ConsoleKey.UpArrow:
                     directionX = -1;
                     break;
+
                 case ConsoleKey.DownArrow:
                     directionX = 1;
                     break;
+
                 case ConsoleKey.LeftArrow:
                     directionY = -1;
                     break;
+
                 case ConsoleKey.RightArrow:
                     directionY = 1;
                     break;
@@ -70,6 +73,7 @@ namespace vn_mode_csharp_dz31
                 Console.Write(" ");
                 return true;
             }
+
             return false;
         }
 
