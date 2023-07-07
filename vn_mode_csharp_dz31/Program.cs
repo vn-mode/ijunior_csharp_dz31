@@ -9,10 +9,9 @@ namespace vn_mode_csharp_dz31
             Console.CursorVisible = false;
             bool isPlaying = true;
             char user = '@';
+            string wall = "#";
             int userPosX = 5;
             int userPosY = 5;
-            int directionX = 0;
-            int directionY = 0;
 
             string[,] map = CreateMap();
             DrawMap(map);
@@ -23,9 +22,9 @@ namespace vn_mode_csharp_dz31
                 if (Console.KeyAvailable)
                 {
                     ConsoleKeyInfo key = Console.ReadKey(true);
-                    ChangeDirection(key, out directionX, out directionY);
+                    ChangeDirection(key, out int directionX, out int directionY);
 
-                    if (CanMove(map, userPosX, userPosY, directionX, directionY))
+                    if (CanMove(wall, map, userPosX, userPosY, directionX, directionY))
                     {
                         userPosX += directionX;
                         userPosY += directionY;
@@ -65,9 +64,9 @@ namespace vn_mode_csharp_dz31
             }
         }
 
-        static bool CanMove(string[,] map, int posX, int posY, int directionX, int directionY)
+        static bool CanMove(string wall, string[,] map, int posX, int posY, int directionX, int directionY)
         {
-            if (map[posX + directionX, posY + directionY] != "#")
+            if (map[posX + directionX, posY + directionY] != wall)
             {
                 Console.SetCursorPosition(posY, posX);
                 Console.Write(" ");
