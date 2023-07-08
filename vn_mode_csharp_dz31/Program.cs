@@ -18,7 +18,7 @@ namespace vn_mode_csharp_dz31
 
             while (isPlaying)
             {
-                DrawUser(user, userPosX, userPosY);
+                DrawSymbol(user, userPosX, userPosY);
                 if (Console.KeyAvailable)
                 {
                     ConsoleKeyInfo key = Console.ReadKey(true);
@@ -33,10 +33,10 @@ namespace vn_mode_csharp_dz31
             }
         }
 
-        static void DrawUser(char user, int posX, int posY)
+        static void DrawSymbol(char symbol, int posX, int posY)
         {
             Console.SetCursorPosition(posY, posX);
-            Console.Write(user);
+            Console.Write(symbol);
         }
 
         static void ChangeDirection(ConsoleKeyInfo key, out int directionX, out int directionY)
